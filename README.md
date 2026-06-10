@@ -1,32 +1,19 @@
-# 21 Setlist — MVP navegável
+# 21 Setlist - Repertório Clay Highway
 
-Protótipo funcional do aplicativo de repertórios para músicos e bandas.
+Versão com as 47 músicas do repertório de 3 de junho de 2026, mantendo a ordem original e as letras/cifras presentes no PDF.
 
-## O que já funciona
+## Atualização no GitHub
 
-- Dashboard responsiva
-- Biblioteca de músicas
-- Cadastro e edição de música
-- Criação de repertório
-- Adição e remoção de músicas
-- Mudança da ordem com botões subir/descer
-- Cálculo automático da duração
-- Modo show com letra, tom, BPM e próxima música
-- Persistência local no navegador com localStorage
+Substitua todos os arquivos do repositório por estes arquivos e confirme o commit. A Vercel fará o novo deploy automaticamente.
 
-## Rodar localmente
+## Recursos
 
-```bash
-npm install
-npm run dev
-```
-
-Abra `http://localhost:3000`.
-
-## Próxima fase
-
-1. Supabase para banco de dados e autenticação
-2. Arrastar e soltar com dnd-kit
-3. Editor rico de letras/cifras
-4. Sets, intervalos e itens não musicais
-5. PWA e uso offline
+- 47 músicas na ordem original
+- letras e cifras cadastradas nas músicas presentes no documento
+- cores dos trechos preservadas
+- tela cheia para palco
+- swipe para avançar e voltar no celular
+- setas do teclado no desktop
+- botão flutuante para sair
+- ordenação do repertório
+- dados salvos localmente no navegador
