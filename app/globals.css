@@ -20,3 +20,25 @@
 }
 
 .auth-page{min-height:100vh;display:grid;place-items:center;background:#080909;padding:24px;color:#fff}.auth-card{width:min(430px,100%);background:#111313;border:1px solid #292d2d;border-radius:24px;padding:30px;box-shadow:0 24px 80px #0008}.auth-brand{margin-bottom:32px}.auth-card h1{font-size:30px;margin:0 0 8px}.auth-card>p{color:#969d9d;margin:0 0 26px}.auth-card label{display:grid;gap:8px;font-size:13px;font-weight:700;margin:16px 0;color:#d9dddd}.auth-card input{width:100%;background:#090a0a;border:1px solid #303535;color:#fff;border-radius:12px;padding:14px 15px;font:inherit;outline:none}.auth-card input:focus{border-color:#d8ff00}.auth-submit{width:100%;justify-content:center;margin-top:10px}.auth-switch{width:100%;background:transparent;border:0;color:#d8ff00;padding:15px;cursor:pointer}.auth-message,.sync-error{background:#3a1515;border:1px solid #7c2c2c;color:#ffd1d1;padding:12px 14px;border-radius:10px;font-size:13px}.loading-card{display:flex;align-items:center;gap:14px;color:#fff}.logout-button{background:transparent;border:0;color:#9aa0a0;cursor:pointer;margin-left:auto}.sync-error{margin:16px 24px 0}
+
+/* Tela cheia v5: 1px menor e rolagem vertical quando a letra ultrapassar a tela */
+.lyrics-sheet{
+  overflow-y:auto;
+  overflow-x:hidden;
+  justify-content:flex-start;
+  scrollbar-width:thin;
+  scrollbar-color:#4a4f58 transparent;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
+}
+.lyrics-sheet::-webkit-scrollbar{width:5px}
+.lyrics-sheet::-webkit-scrollbar-track{background:transparent}
+.lyrics-sheet::-webkit-scrollbar-thumb{background:#4a4f58;border-radius:999px}
+.lyric-line{
+  font-size:clamp(12px,calc((100dvh - 170px)/var(--line-count)*.96 - 1px),24px);
+}
+@media(max-width:700px){
+  .lyric-line{
+    font-size:clamp(11px,calc((100dvh - 145px)/var(--line-count)*.98 - 1px),22px);
+  }
+}
