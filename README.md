@@ -1,19 +1,15 @@
-# 21 Setlist - Repertório Clay Highway
+# 21 Setlist — versão Supabase
 
-Versão com as 47 músicas do repertório de 3 de junho de 2026, mantendo a ordem original e as letras/cifras presentes no PDF.
+## 1. Banco de dados
+No Supabase, abra **SQL Editor**, cole o conteúdo de `supabase/setup.sql` e execute.
 
-## Atualização no GitHub
+## 2. Variáveis de ambiente
+Na Vercel, adicione:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 
-Substitua todos os arquivos do repositório por estes arquivos e confirme o commit. A Vercel fará o novo deploy automaticamente.
+Use `.env.example` apenas como referência. Nunca publique chaves secretas ou `service_role`.
 
-## Recursos
-
-- 47 músicas na ordem original
-- letras e cifras cadastradas nas músicas presentes no documento
-- cores dos trechos preservadas
-- tela cheia para palco
-- swipe para avançar e voltar no celular
-- setas do teclado no desktop
-- botão flutuante para sair
-- ordenação do repertório
-- dados salvos localmente no navegador
+## 3. Login
+Abra o app, crie uma conta com e-mail e senha e confirme o e-mail caso o Supabase solicite.
+Na primeira entrada, as 47 músicas e o repertório serão importados automaticamente para sua conta.
