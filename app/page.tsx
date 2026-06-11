@@ -1,5 +1,6 @@
 "use client";
-import { FormEvent, useEffect, useRef, useState } from "react";
+// build: v7-no-usememo
+import {FormEvent,useEffect,useRef,useState} from "react";
 import {ArrowDown,ArrowLeft,ArrowUp,Check,ChevronLeft,ChevronRight,Clock3,Expand,Home,ListMusic,LogOut,Maximize2,Menu,Mic2,MoreHorizontal,Music2,Search,Settings,X} from "lucide-react";
 import type {Session} from "@supabase/supabase-js";
 import {supabase} from "../lib/supabase";
@@ -25,7 +26,7 @@ export default function Page(){
 
  const active=setlists.find(s=>s.id===activeId)||setlists[0];
  const activeSongs=active.songIds.map(id=>songs.find(s=>s.id===id)).filter(Boolean) as Song[];
- const filtered=useMemo(()=>songs.filter(s=>`${s.title} ${s.artist}`.toLowerCase().includes(query.toLowerCase())),[songs,query]);
+ const filtered=songs.filter(s=>`${s.title} ${s.artist}`.toLowerCase().includes(query.toLowerCase()));
  const move=(i:number,d:-1|1)=>{const t=i+d;if(t<0||t>=active.songIds.length)return;const ids=[...active.songIds];[ids[i],ids[t]]=[ids[t],ids[i]];setSetlists(x=>x.map(r=>r.id===active.id?{...r,songIds:ids,updatedAt:"Agora"}:r))};
  const openShow=(i=0)=>{setShowIndex(i);setView("show")};
  const nav=[{l:"Início",I:Home,a:()=>setView("home")},{l:"Repertórios",I:ListMusic,a:()=>setView("home")},{l:"Músicas",I:Music2,a:()=>setView("songs")},{l:"Configurações",I:Settings,a:()=>{}}];
