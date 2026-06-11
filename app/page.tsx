@@ -1,5 +1,5 @@
 "use client";
-import {FormEvent,useEffect,useMemo,useRef,useState} from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import {ArrowDown,ArrowLeft,ArrowUp,Check,ChevronLeft,ChevronRight,Clock3,Expand,Home,ListMusic,LogOut,Maximize2,Menu,Mic2,MoreHorizontal,Music2,Search,Settings,X} from "lucide-react";
 import type {Session} from "@supabase/supabase-js";
 import {supabase} from "../lib/supabase";
