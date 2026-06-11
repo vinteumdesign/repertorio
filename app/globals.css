@@ -42,3 +42,21 @@
     font-size:clamp(11px,calc((100dvh - 145px)/var(--line-count)*.98 - 1px),22px);
   }
 }
+
+.mobile-menu-backdrop,.mobile-drawer{display:none}
+@media(max-width:980px){
+  .mobile-menu-backdrop{display:block;position:fixed;inset:0;border:0;background:rgba(0,0,0,.62);backdrop-filter:blur(3px);z-index:40}
+  .mobile-drawer{display:flex;position:fixed;top:0;right:0;bottom:0;width:min(86vw,340px);z-index:41;background:#111318;border-left:1px solid var(--line);padding:18px;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.38);animation:drawer-in .2s ease-out}
+  .mobile-drawer-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .mobile-drawer-head .brand{margin:0}
+  .mobile-drawer-head>button{width:40px;height:40px;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:11px;display:grid;place-items:center}
+  .mobile-drawer nav{display:flex;flex-direction:column;gap:7px;padding:18px 0}
+  .mobile-drawer nav button{width:100%;border:0;background:transparent;color:var(--muted);border-radius:11px;padding:13px 14px;display:flex;align-items:center;gap:12px;text-align:left;font-weight:700}
+  .mobile-drawer nav button.active{background:#23272e;color:var(--accent)}
+  .mobile-drawer nav button:active{transform:scale(.99)}
+  .mobile-drawer-user{margin-top:auto;display:grid;grid-template-columns:42px minmax(0,1fr);gap:11px;align-items:center;border-top:1px solid var(--line);padding-top:18px}
+  .mobile-drawer-user strong,.mobile-drawer-user span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mobile-drawer-user strong{font-size:13px}.mobile-drawer-user span{font-size:10px;color:var(--muted);margin-top:3px}
+  .mobile-logout{margin-top:12px;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:11px;padding:12px 14px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800}
+}
+@keyframes drawer-in{from{transform:translateX(100%);opacity:.7}to{transform:translateX(0);opacity:1}}
